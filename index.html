@@ -13,13 +13,27 @@
 		  content="https://bzgzs.cn/wp-content/uploads/2022/07/cropped-logo-1-270x270.png">
 </head>
 <body>
-<section id="index" class="d-flex align-items-center" style="--bg: url(https://s1.ax1x.com/2023/01/26/pSN71US.jpg)">
-	<nav id="main-menu">
-		<a href="#index" onclick="document.documentElement.scrollTop=0">首页</a>
-		<a href="#tech">技术<span class="hide">优势</span></a>
-		<a href="#workload">工作<span class="hide">量</span></a>
-		<a href="#join"><span class="hide">立即</span>加入</a>
-	</nav>
+<main id="index" class="d-flex align-items-center" style="--bg: url('https://s1.ax1x.com/2023/01/26/pSN71US.jpg')">
+	<header>
+		<div class="site-branding d-flex align-items-center">
+			<a href="https://bzgzs.cn/" class="custom-logo-link" rel="home" aria-current="page">
+				<picture>
+					<source srcset="https://bzgzs.cn/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2022/07/cropped-logo.png.webp"
+							type="image/webp">
+					<img width="128" height="128" src="https://bzgzs.cn/wp-content/uploads/2022/07/cropped-logo.png"
+						 class="custom-logo webpexpress-processed" alt="斌政工作室" decoding="async"></picture>
+			</a>
+			<h1 class="site-title">
+				<a href="https://bzgzs.cn/" rel="home">斌政工作室</a>
+			</h1>
+		</div>
+		<nav>
+			<a href="#index" onclick="document.documentElement.scrollTop=0">首页</a>
+			<a href="#tech">技术<span class="hide">优势</span></a>
+			<a href="#workload">工作<span class="hide">量</span></a>
+			<a href="#join"><span class="hide">立即</span>加入</a>
+		</nav>
+	</header>
 	<div class="at-center">
 		<h1 class="large-text at-center">斌政工作室招募</h1>
 		<div class="actions">
@@ -39,18 +53,39 @@
 		<a class="next" href="#tech"></a>
 	</div>
 	<div class="bg"></div>
-</section>
-<section class="d-flex align-items-center" style="--bg: url(https://s1.ax1x.com/2022/11/20/zMAkKe.jpg)">
-	<nav>
-		<a onclick="document.documentElement.scrollTop=window.innerHeight" href="#tech" id="tech" class="label">技术<span
-				class="hide">优势</span>
-			<div class="bg"></div>
-		</a>
-	</nav>
+</main>
+<main class="d-flex align-items-center"
+	  style="--bg: url('https://s1.ax1x.com/2022/11/20/zMAkKe.jpg'); --index: calc(2)">
+	<a onclick="document.documentElement.scrollTop = window.innerHeight" href="#tech" id="tech" class="label">技术<span
+			class="hide">优势</span>
+		<div class="bg"></div>
+	</a>
 	<h1 class="large-text at-center">技术优势</h1>
-	<div id="test" class="bg"></div>
+	<div class="bg"></div>
 	<a class="next" href="#workload"></a>
-</section>
+</main>
+<main class="d-flex align-items-center"
+	  style="--bg: url('https://s1.ax1x.com/2022/12/03/zrMWjJ.md.jpg'); --index: calc(3)">
+	<a onclick="document.documentElement.scrollTop = window.innerHeight * 2" href="#workload" id="workload"
+	   class="label">工作<span
+			class="hide">量</span>
+		<div class="bg"></div>
+	</a>
+	<h1 class="large-text at-center">工作量</h1>
+	<div class="bg"></div>
+	<a class="next" href="#join"></a>
+</main>
+<main class="d-flex align-items-center"
+	  style="--bg: url(https://s1.ax1x.com/2022/11/20/zMEeL4.jpg); --index: calc(4)">
+	<a onclick="document.documentElement.scrollTop = window.innerHeight * 3" href="#join" id="join" class="label"><span
+			class="hide">立即</span>加入
+		<div class="bg"></div>
+	</a>
+	<h1 class="large-text at-center">立即加入</h1>
+	<div class="bg"></div>
+	<a class="next" href="#join"></a>
+</main>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<!--<script src="/assets/js/main.min.js"></script>-->
 </body>
 </html>

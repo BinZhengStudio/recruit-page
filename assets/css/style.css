@@ -17,6 +17,14 @@ p {
     font-family: serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-weight: 700;
+    margin-block-start: 0;
+    margin-block-end: .5em;
+    text-rendering: optimizeLegibility;
+}
+
 button {
     color: #fff;
     background-color: transparent;
@@ -34,23 +42,29 @@ button:hover {
     border: solid 1px #f99;
 }
 
-section {
+img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
     position: sticky;
-    top: 0;
+    top: 3.5rem;
     margin-top: 3.5rem;
     height: calc(100vh - 3.5rem);
 }
 
-section:nth-child(1) {
+main:nth-child(1) {
     margin-top: 0;
+    top: 0;
     height: 100vh;
 }
 
 a, button, input[type=submit] {
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: color 0.5s, background-color 0.5s, border-bottom-color 0.5s, border-left-color 0.5s, border-right-color 0.5s, border-top-color 0.5s;
+    -moz-transition: color 0.5s, background-color 0.5s, border-bottom-color 0.5s, border-left-color 0.5s, border-right-color 0.5s, border-top-color 0.5s;
+    -ms-transition: color 0.5s, background-color 0.5s, border-bottom-color 0.5s, border-left-color 0.5s, border-right-color 0.5s, border-top-color 0.5s;
+    transition: color 0.5s, background-color 0.5s, border-bottom-color 0.5s, border-left-color 0.5s, border-right-color 0.5s, border-top-color 0.5s;
 }
 
 .at-center {
@@ -87,12 +101,12 @@ a, button, input[type=submit] {
 .label {
     display: flex;
     position: absolute;
-    margin-left: 25vw;
+    margin-left: calc((var(--index) - 1) * 25vw);
+    color: #fff;
     margin-top: -3.5rem;
     top: 0;
     width: 25vw;
     height: 3.5rem;
-    padding: 0.8rem 2rem;
     box-sizing: border-box;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
@@ -101,13 +115,17 @@ a, button, input[type=submit] {
     overflow: hidden;
 }
 
+.label:hover {
+    color: #f99;
+}
+
 .label .bg {
     top: 0;
     left: 0;
     position: absolute;
     height: 100vh;
     width: 100%;
-    margin-left: -25vw;
+    margin-left: calc((1 - var(--index)) * 25vw);
     z-index: -1;
 }
 
@@ -131,9 +149,13 @@ a, button, input[type=submit] {
     margin-right: 0;
 }
 
-nav {
+header {
+    display: flex;
     position: absolute;
     top: 0;
+    width: 100%;
+    -webkit-backdrop-filter: blur(0.8rem);
+    backdrop-filter: blur(0.8rem);
 }
 
 nav a {
@@ -153,15 +175,15 @@ nav a:hover {
     color: #f99;
 }
 
-section:nth-child(1) > .bg {
+main:nth-child(1) > .bg {
     height: 100%;
 }
 
-section:nth-child(1) >  .bg:after {
+main:nth-child(1) > .bg:after {
     margin-top: 0;
 }
 
-section > .bg {
+main > .bg {
     width: 100%;
     top: 0;
     overflow: hidden;
@@ -170,7 +192,7 @@ section > .bg {
     z-index: -1;
 }
 
-section > .bg:after {
+main > .bg:after {
     content: "";
     position: absolute;
     height: 100vh;
@@ -182,7 +204,55 @@ section > .bg:after {
     width: 100vw;
 }
 
-@media screen and (max-width: 32em) {
+.site-branding {
+    display: none;
+    margin-left: 5vw;
+    margin-right: 0.5rem;
+}
+
+.site-branding * {
+    color: #fff;
+    margin: 0;
+}
+
+.site-branding a:hover {
+    color: #f99;
+}
+
+.site-branding a.custom-logo-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 46.125em) {
+    header {
+        justify-content: space-between;
+    }
+
+    .site-branding {
+        display: flex;
+    }
+
+    nav {
+        margin-right: 5vw;
+    }
+
+    nav a {
+        width: 7rem;
+    }
+
+    .label {
+        margin-left: calc(95vw - (5 - var(--index)) * 7rem);
+        width: 7rem;
+    }
+
+    .label .bg {
+        margin-left: calc((5 - var(--index)) * 7rem - 95vw);
+    }
+}
+
+@media screen and (max-width: 26em) {
     .hide {
         display: none;
     }
