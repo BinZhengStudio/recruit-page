@@ -21,10 +21,11 @@ button {
     color: #fff;
     background-color: transparent;
     border: solid 1px #fff;
-    margin-right: 2rem;
     padding: 1rem 3rem;
     border-radius: 2rem;
     cursor: pointer;
+    -webkit-backdrop-filter: blur(0.8rem);
+    backdrop-filter: blur(0.8em);
 }
 
 button:hover {
@@ -86,10 +87,10 @@ a, button, input[type=submit] {
 .label {
     display: flex;
     position: absolute;
-    margin-left: 7rem;
+    margin-left: 25vw;
     margin-top: -3.5rem;
     top: 0;
-    width: 7rem;
+    width: 25vw;
     height: 3.5rem;
     padding: 0.8rem 2rem;
     box-sizing: border-box;
@@ -98,6 +99,36 @@ a, button, input[type=submit] {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+.label .bg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    margin-left: -25vw;
+    z-index: -1;
+}
+
+.label .bg:after {
+    content: "";
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    margin-top: 0;
+    position: absolute;
+    height: 100vh;
+}
+
+.actions > * {
+    margin-right: 2rem;
+}
+
+.actions > *:last-child {
+    margin-right: 0;
 }
 
 nav {
@@ -109,7 +140,7 @@ nav a {
     display: flex;
     position: initial;
     color: #fff;
-    width: 7rem;
+    width: 25vw;
     height: 3.5rem;
     padding: 0.8rem 2rem;
     box-sizing: border-box;
@@ -123,42 +154,15 @@ nav a:hover {
     color: #f99;
 }
 
-#index .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+section:nth-child(1) > .bg {
     height: 100%;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s1.ax1x.com/2023/01/26/pSN71US.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
 }
 
-.label .bg {
-    top: 0;
-    left: 0;
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    margin-left: -7rem;
-    z-index: -1;
-}
-
-.label .bg:after {
-    content: "";
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s1.ax1x.com/2022/11/20/zMAkKe.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100vw;
+section:nth-child(1) >  .bg:after {
     margin-top: 0;
-    position: absolute;
-    height: 100vh;
 }
 
-#test {
+section > .bg {
     width: 100%;
     top: 0;
     overflow: hidden;
@@ -167,14 +171,20 @@ nav a:hover {
     z-index: -1;
 }
 
-#test:after {
+section > .bg:after {
     content: "";
     position: absolute;
     height: 100vh;
     margin-top: -3.5rem;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s1.ax1x.com/2022/11/20/zMAkKe.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--bg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
+}
+
+@media screen and (max-width: 32em) {
+    .hide {
+        display: none;
+    }
 }
