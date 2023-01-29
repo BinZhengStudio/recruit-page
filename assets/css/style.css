@@ -9,6 +9,7 @@
 
 html {
 	scroll-behavior: smooth;
+	font-size: 16px;
 }
 
 body {
@@ -178,12 +179,15 @@ a, button, input[type=submit] {
 	height: 100vh;
 }
 
-.actions > * {
-	margin-right: 2rem;
+.actions {
+	display: flex;
+	gap: 2rem;
+	flex-direction: column;
+	align-items: stretch;
 }
 
-.actions > *:last-child {
-	margin-right: 0;
+.actions button {
+	width: 50%;
 }
 
 header {
@@ -241,25 +245,30 @@ main > .bg:after {
 	width: 100vw;
 }
 
-.site-branding {
-	display: none;
-	margin-left: 5vw;
-	margin-right: 0.5rem;
-}
-
-.site-branding * {
+.next {
+	font-family: sans-serif;
+	position: absolute;
+	animation: 1s ease-in-out 0s infinite alternate-reverse float;
+	bottom: 5%;
+	right: calc(50% - 2rem);
+	font-size: 3rem;
+	width: 4rem;
 	color: #fff;
-	margin: 0;
+	text-align: center;
 }
 
-.site-branding a:hover {
+.next:hover {
 	color: #f99;
 }
 
-.site-branding a.custom-logo-link {
-	width: 2.5rem;
-	height: 2.5rem;
-	margin-right: 0.5rem;
+@keyframes float {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(0, 1rem);
+	}
 }
 
 .wrapper {
@@ -304,6 +313,31 @@ main > .bg:after {
 	flex-wrap: nowrap !important;
 }
 
+#tech-main .bg:after {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), var(--bg);
+}
+
+.site-branding {
+	display: none;
+	margin-left: 5vw;
+	margin-right: 0.5rem;
+}
+
+.site-branding * {
+	color: #fff;
+	margin: 0;
+}
+
+.site-branding a:hover {
+	color: #f99;
+}
+
+.site-branding a.custom-logo-link {
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-right: 0.5rem;
+}
+
 @media screen and (min-width: 46.125em) {
 	header {
 		justify-content: space-between;
@@ -321,6 +355,14 @@ main > .bg:after {
 		width: 7rem;
 	}
 
+	.actions {
+		flex-direction: row;
+	}
+
+	.actions button {
+		width: 100%;
+	}
+
 	.label {
 		margin-left: calc(95vw - (5 - var(--index)) * 7rem);
 		width: 7rem;
@@ -331,19 +373,50 @@ main > .bg:after {
 	}
 }
 
-@media screen and (min-width: 32em) {
-	.show {
-		display: none;
+
+@media screen and (min-width: 66em) {
+	#tech-main .wrapper {
+		gap: 15vw;
 	}
 
+	#tech-main .panels {
+		flex-direction: column;
+		max-width: 33rem;
+	}
+
+	#tech-main .show {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 33em) {
 	.panel {
 		width: calc(100% / var(--amo) - 3rem);
 		min-width: 13rem;
+	}
+
+	#tech-main .panel {
+		min-width: 30rem;
+	}
+
+	#workload-main .show {
+		display: none;
 	}
 }
 
 @media screen and (max-width: 26em) {
 	.hide {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	html {
+		font-size: 14px;
+	}
+
+	.actions button {
+		padding: 1rem 0;
+		width: 70%;
 	}
 }
