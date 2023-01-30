@@ -317,7 +317,7 @@ main > .bg:after {
 	flex-wrap: nowrap !important;
 }
 
-#tech-main .bg:after {
+#reward-main .bg:after {
 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), var(--bg);
 }
 
@@ -384,20 +384,20 @@ footer {
 }
 
 
-@media screen and (min-width: 66em) {
-	#tech-main .wrapper {
-		gap: 15vw;
-	}
+/*@media screen and (min-width: 66em) {*/
+/*	#reward-main .wrapper {*/
+/*		gap: 15vw;*/
+/*	}*/
 
-	#tech-main .panels {
-		flex-direction: column;
-		max-width: 33rem;
-	}
+/*	#reward-main .panels {*/
+/*		flex-direction: column;*/
+/*		max-width: 33rem;*/
+/*	}*/
 
-	#tech-main .show {
-		display: none;
-	}
-}
+/*	#reward-main .show {*/
+/*		display: none;*/
+/*	}*/
+/*}*/
 
 @media screen and (min-width: 33em) {
 	.panel {
@@ -405,13 +405,13 @@ footer {
 		min-width: 13rem;
 	}
 
-	#tech-main .panel {
-		min-width: 30rem;
-	}
-
 	#workload-main .show {
 		display: none;
 	}
+
+	/*#reward-main .panel {*/
+	/*	min-width: 30rem;*/
+	/*}*/
 }
 
 @media screen and (max-width: 26em) {
@@ -421,12 +421,7 @@ footer {
 }
 
 @media screen and (max-width: 360px) {
-	html {
-		font-size: 14px;
-	}
-
 	.actions button {
 		padding: 1rem 0;
-		width: 70%;
 	}
 }
