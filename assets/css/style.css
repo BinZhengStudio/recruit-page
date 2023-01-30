@@ -420,7 +420,17 @@ footer {
 	}
 }
 
+@media screen and (max-width: 768px) {
+	html {
+		font-size: 15px;
+	}
+}
+
 @media screen and (max-width: 360px) {
+	html {
+		font-size: 14px;
+	}
+
 	.actions button {
 		padding: 1rem 0;
 	}
